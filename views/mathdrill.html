@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- load jquery -->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+    <!-- load Problem Classes -->
+    <script type="text/javascript" src="/javascripts/Class.js"></script>
+    <script type="text/javascript" src="/javascripts/nomukLib.js"></script >
+    <script type="text/javascript" src="/javascripts/BaseTest.js"></script >
+    <script type="text/javascript" src="/javascripts/GCFTest.js"></script >
+    <script type="text/javascript" src="/javascripts/MultTest.js"></script >
+    <script type="text/javascript" src="/javascripts/FracAddTest.js"></script >
+    <script type="text/javascript" src="/javascripts/PercentageOfNum.js"></script >
+    <script type="text/javascript" src="/javascripts/FracReduceTest.js"></script >
+    <script type="text/javascript" src="/javascripts/MixedNumberToFracTest.js"></script >
+    <script type="text/javascript" src="/javascripts/NumberPlusFracTest.js"></script >
+    <script type="text/javascript" src="/javascripts/FracToDecimalTest.js"></script >
+    <script type="text/javascript" src="/javascripts/FractionOfNumberTest.js"></script >
+    <script type="text/javascript" src="/javascripts/LCMTest.js"></script >
+    
+    <script type="text/javascript" src="/javascripts/mathdrill.js"></script>
+
+    <script type="text/javascript" src="/DataTables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/javascripts/mathtesttable.js"></script>
+
+    <title>Nomuk Mathdrills</title>
+    <style type="text/css">
+      @import "/DataTables/css/jquery.dataTables.css";
+      .label   {text-align: right}
+      .error   {color: red}
+      .correct {color: green}
+      .wrong   {color: red}
+
+      .red { color: red}
+      .green { color: green }
+
+      #problem p,input{
+      font-size:30px;
+      font-family:Impact sans-serif;
+      }
+
+      #problem ul{
+      font-size:20px;
+      font-family:Cursive serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="main_msg">Nomuk Test</h1>
+
+    <span id="testid" style="display:none;">{{testid}}</span>
+
+    <div id="test_table_div">
+      <p style="font-size:20px;font-family:Impact sans-serif;">
+	Name:<span id="name"></span>, Points:<span id="tpoints"></span>, Score:<span id="tscore"></span>
+      </p>
+      <table id="test_table"></table>
+    </div>
+
+    <div id="problem">
+      <p>
+	<span id="instructions"></span> 
+      </p>
+      <p>
+	<span id="op0"> </span> 
+	<span id="sep0"> </span>
+	<span id="op1"> </span> 
+	<span id="sep1"> </span>
+	<span id="op2"> </span> 
+	<span>=</span> 
+	<input type="text" id="answer" name="answer" autocomplete="off"/>
+      </p>
+
+      <p id="score" ></p>
+      <p id="cir" ></p>
+      <p id="my_points" ></p>
+      <p id="count"></p>
+
+      <ul>
+      </ul>
+    </div>
+
+  </body>
+
+</html>
