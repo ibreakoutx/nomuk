@@ -36,14 +36,14 @@ var dotest = function( testobj, callback ) {
 	//Return key pressed
 	if ( key.keyCode == 13 ) {
 
+	    //if (Test.done) window.location='/';
+	    if (Test.done) callback(Test.getTotal(),
+				    Test.getCorrect(),
+				    Test.getPoints()
+				   );
+
 	    if ( $('#problem input[name=answer]').val() != '' ) {
 
-		//if (Test.done) window.location='/';
-		if (Test.done) callback(Test.getTotal(),
-					Test.getCorrect(),
-					Test.getPoints()
-				       );
-		
 		if ( Test.notDone() ) {
 		    
 		    //Points is the total points accumulated
@@ -64,7 +64,7 @@ var dotest = function( testobj, callback ) {
 		}
 		else {
 		    $("#problem").hide();
-		    $('#main_msg').text("Test complete, Final Score = " + Test.getScore() + "%");
+		    $('#main_msg').text("Test complete, Final Score = " + Test.getScore() + "% , press return to continue");
 		} 
 	    }
 
