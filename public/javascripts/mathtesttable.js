@@ -23,6 +23,7 @@ $( function() {
 	    $('#tscore').text( score+'%' );
 
             $('#problem').hide();
+            $('#end_test').hide();
 
 	    $('button[name=rowselect]').click( function() {
 		testid = $(this).val();

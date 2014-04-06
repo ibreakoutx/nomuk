@@ -30,17 +30,18 @@ var dotest = function( testobj, callback ) {
     Test.generateProblem();
     Test.printProblem();
     Test.points = 0 ;
-
+    
+    $('#end_test_button').click( function() {
+	 callback(Test.getTotal(),
+		  Test.getCorrect(),
+		  Test.getPoints()
+		 );
+    });
+    
     $(document).on('keypress','#answer', function(key) {
 	
 	//Return key pressed
 	if ( key.keyCode == 13 ) {
-
-	    //if (Test.done) window.location='/';
-	    if (Test.done) callback(Test.getTotal(),
-				    Test.getCorrect(),
-				    Test.getPoints()
-				   );
 
 	    if ( $('#problem input[name=answer]').val() != '' ) {
 
@@ -64,7 +65,8 @@ var dotest = function( testobj, callback ) {
 		}
 		else {
 		    $("#problem").hide();
-		    $('#main_msg').text("Test complete, Final Score = " + Test.getScore() + "% , press return to continue");
+		    $("#end_test").show();
+		    $('#end_test_msg').text("Test complete, Final Score = " + Test.getScore() + "%");
 		} 
 	    }
 
