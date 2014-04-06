@@ -73,7 +73,7 @@ app.get('/saveTest', function(req,res) {
 app.get('/updateTestResult', function(req,res) {
     var score = parseInt(parseInt(req.query.correct)/parseInt(req.query.total)*100);
     var testupdobj = { '$set' : 
-		       {'score':score + '%',
+		       {'score':score,
 			'status':'done' }
 		     };
     TestDb.updateById( req.query.testid, testupdobj , function(err, rec) {

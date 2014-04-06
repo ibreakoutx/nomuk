@@ -15,7 +15,7 @@ var PercentageOfNum = BaseTest.extend( {
 	this.op[0] = percent ;
 	this.op[1] = num ;
 
-	this.correct_ans = truncateFloat(percent/100*num,2) ;
+	this.correct_ans = truncateFloat((percent*num)/100,2) ;
 	console.log(this.correct_ans);
     },
 

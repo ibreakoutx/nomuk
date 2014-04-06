@@ -25,6 +25,14 @@
     <script type="text/javascript" src="/DataTables/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="/javascripts/mathtesttable.js"></script>
 
+    <script type="text/javascript">
+      $( function() {
+          $('#test_home').click( function() {
+                 window.location = '/';
+          });
+      });
+    </script>
+
     <title>Nomuk Mathdrills</title>
     <style type="text/css">
       @import "/DataTables/css/jquery.dataTables.css";
@@ -50,6 +58,7 @@
 
   <body>
     <h1 id="main_msg">Nomuk Test</h1>
+    <button id="test_home">Test Home</button>
 
     <span id="testid" style="display:none;">{{testid}}</span>
 
