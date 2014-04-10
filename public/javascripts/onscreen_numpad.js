@@ -75,10 +75,7 @@ $( function() {
     {
 	//var text_box = document.getElementById("number");
 	var text = $('#problem input[name=answer]').val();
-	var len = text_box.length ;
-	console.log(len);
-	console.log(text);
-	console.log(text.substring(0,len-1));
+	var len = text.length ;
 	$('#problem input[name=answer]').val(text.substring(0,len-1));
     }
 });
