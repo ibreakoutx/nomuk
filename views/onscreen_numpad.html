@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+ <head>
+  <title>On Screen Number Pad Using JavaScript</title>
+  <script type="text/javascript" src="/javascripts/onscreen_numpad.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/onscreen_numpad.css"/>
+ </head>
+
+
+<body>
+<div id="onscreen_numpad" class="main_panel">
+
+<!-- Input box
+<br /> 
+<center><input class="text_box" type="text" id="number" name="num" /></center>
+<br /><br />
+-->
+
+<div class="number_button" onclick="number_write('1');">1</div>
+<div class="number_button" onclick="number_write('2');">2</div>
+<div class="number_button" onclick="number_write('3');">3</div>
+<div class="number_button" onclick="number_clear();">Clr</div>
+
+<div class="number_button" onclick="number_write('4');">4</div>
+<div class="number_button" onclick="number_write('5');">5</div>
+<div class="number_button" onclick="number_write('6');">6</div>
+<div class="number_button" onclick="number_c();">C</div>
+
+<div class="number_button" onclick="number_write('7');">7</div>
+<div class="number_button" onclick="number_write('8');">8</div>
+<div class="number_button" onclick="number_write('9');">9</div>
+<div class="number_button" onclick="number_write('/');">/</div>
+
+<div class="number_button" onclick="number_write('0');">0</div>
+<div class="number_button" onclick="number_write('.');">.</div>
+<div class="enter_button"  id="enter" >Enter</div>
+
+</div>
+</body>
+</html>

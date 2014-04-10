@@ -24,6 +24,7 @@ $( function() {
 
             $('#problem').hide();
             $('#end_test').hide();
+	    $('#onscreen_numpad').hide();
 
 	    $('button[name=rowselect]').click( function() {
 		testid = $(this).val();

@@ -70,6 +70,10 @@ app.get('/saveTest', function(req,res) {
     });
 });
 
+app.get('/onscreen_numpad', function(req,res) {
+    res.render('onscreen_numpad');
+});
+
 app.get('/updateTestResult', function(req,res) {
     var score = parseInt(parseInt(req.query.correct)/parseInt(req.query.total)*100);
     var testupdobj = { '$set' : 

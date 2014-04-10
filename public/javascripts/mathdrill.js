@@ -2,6 +2,7 @@ var dotest = function( testobj, callback ) {
     var logstring ;
 
     $('#problem').show();
+    $('#onscreen_numpad').show();
 
     var Test ;
     
@@ -39,39 +40,45 @@ var dotest = function( testobj, callback ) {
     });
     
     $(document).on('keypress','#answer', function(key) {
-	
 	//Return key pressed
 	if ( key.keyCode == 13 ) {
-
-	    if ( $('#problem input[name=answer]').val() != '' ) {
-
-		if ( Test.notDone() ) {
-		    
-		    //Points is the total points accumulated
-		    $('#my_points').text("My Banini $s = " + Test.points);
-		    
-		    logstring = "<li>" + 
-			Test.convProblem2String() + "::" 
-			+ Test.msg + "</li>" ;
-	    
-		    $('#count').text("Problem count = " + Test.count);
-		    
-		    $('ul').prepend(logstring);
-		    
-		    Test.printScore();
-		    
-		    Test.generateProblem();
-		    Test.printProblem();
-		}
-		else {
-		    $("#problem").hide();
-		    $("#end_test").show();
-		    $('#end_test_msg').text("Test complete, Final Score = " + Test.getScore() + "%");
-		} 
-	    }
-
+	    exec_single_problem(Test);
 	}//key code
-	
     });
+
+    $('#pad_enter').click( function() {
+	exec_single_problem(Test);
+    });
+
 };
 
+var exec_single_problem = function(Test) {
+    
+    if ( $('#problem input[name=answer]').val() != '' ) {
+	
+	if ( Test.notDone() ) {
+	    
+	    //Points is the total points accumulated
+	    $('#my_points').text("My Banini $s = " + Test.points);
+	    
+	    logstring = "<li>" + 
+		Test.convProblem2String() + "::" 
+		+ Test.msg + "</li>" ;
+	    
+	    $('#count').text("Problem count = " + Test.count);
+	    
+	    $('ul').prepend(logstring);
+		    
+	    Test.printScore();
+	    
+	    Test.generateProblem();
+	    Test.printProblem();
+	}
+	else {
+	    $("#problem").hide();
+	    $("#onscreen_numpad").hide();
+	    $("#end_test").show();
+	    $('#end_test_msg').text("Test complete, Final Score = " + Test.getScore() + "%");
+	} 
+    }
+};

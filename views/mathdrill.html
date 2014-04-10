@@ -25,6 +25,9 @@
     <script type="text/javascript" src="/DataTables/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="/javascripts/mathtesttable.js"></script>
 
+    <script type="text/javascript" src="/javascripts/onscreen_numpad.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/onscreen_numpad.css"/>
+
     <script type="text/javascript">
       $( function() {
           $('#test_home').click( function() {
@@ -53,6 +56,19 @@
       font-size:20px;
       font-family:Cursive serif;
       }
+
+      #problem {
+      float:left;
+      display:inline;
+      width:50%;
+      margin:1% 1% 1% 1% ;
+      }
+
+      #onscreen_numpad {
+      float:left;
+      display:inline ;
+      }
+
     </style>
   </head>
 
@@ -93,11 +109,42 @@
       </ul>
     </div>
 
+    <div id="onscreen_numpad" class="main_panel">
+      <div class="number_button" id="pad_1" >1</div>
+      <div class="number_button" id="pad_2" >2</div>
+      <div class="number_button" id="pad_3" >3</div>
+      <div class="number_button" id="pad_clear" >Clr</div>
+      
+      <div class="number_button" id="pad_4">4</div>
+      <div class="number_button" id="pad_5">5</div>
+      <div class="number_button" id="pad_6">6</div>
+      <div class="number_button" id="pad_c">C</div>
+      
+      <div class="number_button" id="pad_7">7</div>
+      <div class="number_button" id="pad_8">8</div>
+      <div class="number_button" id="pad_9">9</div>
+      <div class="number_button" id="pad_slash">/</div>
+      
+      <div class="number_button" id="pad_0">0</div>
+      <div class="number_button" id="pad_dp">.</div>
+      <div class="enter_button"  id="pad_enter" >Enter</div>
+    </div>
+    
     <div id='end_test'>
       <h2 id='end_test_msg'></h2>
       <button id='end_test_button'>Back to Test Home</button>
     </div>
 
   </body>
-
 </html>
+
+
+<!DOCTYPE html>
+
+<html>
+ <head>
+  <title>On Screen Number Pad Using JavaScript</title>
+
+ </head>
+
+
