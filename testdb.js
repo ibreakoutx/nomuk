@@ -56,6 +56,10 @@ testdb.prototype.getTableData = function( callback ) {
     for (var i=0; i < columns.length ; i++) 
 	result['aoColumns'].push( { 'sTitle': columns[i] } ) ;
 
+    result['order'] = [[2,"asc"]];
+    result['iDisplayLength'] = 50;//default number of rows if pagination enabled
+    result['bPaginate'] = false;//turn off pagination
+
     //Create test table
     this.collection.find( {} , {} , function(error, docs) {
 	if (error) callback(error,null);

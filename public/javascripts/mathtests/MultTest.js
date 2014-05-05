@@ -1,7 +1,8 @@
 var MultTest = BaseTest.extend( {
     init: function(_name) {
 	this._super(_name);
-	this.instructions("Multiply these 2 numbers");
+	this.instructions = "Multiply these 2 numbers";
+	this.sep[0] = "*";
     },
 
     generateProblem: function() {

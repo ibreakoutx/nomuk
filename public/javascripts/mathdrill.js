@@ -17,6 +17,8 @@ var dotest = function( testobj, callback ) {
 	case 'frac_to_dec': Test = new FracToDecimalTest("Frac2Dec");break;
 	case 'frac_of':Test = new FractionOfNumberTest("FracOfNum");break;
 	case 'lcm':Test = new LCMTest("LCM");break;
+	case 'decimal_mult':Test = new DecimalMultTest("DecMult");break;
+	case 'decimal_div':Test = new DecimalDivisionTest("DecDiv");break;
 	default : Test = new MultTest("Mult");
     }
     
@@ -24,6 +26,10 @@ var dotest = function( testobj, callback ) {
     Test.hi = parseInt(testobj.op_hi);
     Test.cir = parseInt(testobj.cir);
     Test.problems = parseInt(testobj.num);
+    //FIXME: Debug problems vs. problems_max
+    //Apparently test keeps going even if all problems
+    //answered correctly
+    Test.problems_max = parseInt(testobj.num);
 
     console.log(Test.lo);
     console.log(Test.hi);

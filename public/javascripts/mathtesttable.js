@@ -27,6 +27,7 @@ $( function() {
 	    $('#onscreen_numpad').hide();
 
 	    $('button[name=rowselect]').click( function() {
+		console.log('test button pressed');
 		testid = $(this).val();
                 var qstring = $.param({'testid': testid});
                 var getTestUrl="/getTest?"+ qstring ;
@@ -40,7 +41,7 @@ $( function() {
 		    dataType: "json",
 		    success: function(json) {
 			console.log("ajax get test url passed");
-			console.log(JSON.stringify(json));
+			//console.log(JSON.stringify(json));
 			dotest( json, function(total, correct ,points) {
 			    var updParam = $.param( {'name':name, 'points':points,
 						     'total':total, 'correct':correct,
@@ -51,7 +52,7 @@ $( function() {
 				async:false,
 				dataType:"json",
 				success: function(json) {
-				    console.log(json);
+				    //console.log(json);
 				    window.location = '/' ; 
 				},
 				error: function(xhr,status) {

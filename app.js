@@ -50,7 +50,6 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req,res) {
-    //res.render('mathtesttable');
     res.render('mathdrill');
 });
 
@@ -110,7 +109,7 @@ app.get('/getTableData', function(req,res) {
 		if (err) throw err;
 		else {
 		    result['student'] = student_rec;
-		    console.log(result);
+		    //console.log(JSON.stringify(result));
 		    res.json(result);
 		}
 	    });
@@ -134,17 +133,6 @@ app.get('/getTest', function(req,res) {
 
 app.get('/mathdrill', function(req,res) {
     console.log( req.query.testid );
-});
-
-app.get('/savetest', function(req,res) {
-    //1. Save in dB
-    //2. res.json()
-});
-
-app.get('/mathdrill', function(req,res) {
-    res.render('mathdrill.html');
-    //1. Save in dB
-    //2. res.json()
 });
 
 
