@@ -79,6 +79,7 @@ app.get('/updateTestResult', function(req,res) {
 		       {'score':score,
 			'status':'done' }
 		     };
+
     TestDb.updateById( req.query.testid, testupdobj , function(err, rec) {
 	if (err) throw err ;
 	else {
